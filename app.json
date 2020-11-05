@@ -1,0 +1,10 @@
+{
+  "name": "campk12-live",
+  "description": "This is a real-time push event based server for live classes.",
+  "keywords": ["campk12", "live", "classes", "socket.io", "event", "es6"],
+  "env": {
+    "PORT": 4000,
+    "MONGO_URL": "mongodb://narendertyagi:CFgQ4JpKiOM05JYg@cluster0-shard-00-02.0lkoj.mongodb.net:27017,cluster0-shard-00-00.0lkoj.mongodb.net:27017,cluster0-shard-00-01.0lkoj.mongodb.net:27017/LiveClass?ssl=true&authSource=admin&retryWrites=true",
+    "REDIS_URL_HOST": "65.0.102.254"
+  }
+}

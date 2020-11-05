@@ -1,3 +1,4 @@
+const { config } = require("bluebird");
 const socketIo = require("socket.io");
 const redisAdapter = require("socket.io-redis");
 const userService = require("../services/user");
@@ -12,7 +13,7 @@ module.exports = class SocketConn {
     this.io.adapter(
       redisAdapter({
         port: 6379,
-        host: "localhost",
+        host: config.REDIS_URL_HOST,
       })
     );
     this.openConnection();
