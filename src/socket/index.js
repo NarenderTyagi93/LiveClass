@@ -7,13 +7,14 @@ global.userSocketMap = {};
 
 module.exports = class SocketConn {
   constructor() {}
-  static instance(server) {
+  static instance(server, redisHost) {
     if (!server) throw new Error("Server instance is required");
     this.io = socketIo(server);
+    console.log(redisHost);
     this.io.adapter(
       redisAdapter({
         port: 6379,
-        host: config.REDIS_URL_HOST,
+        host: redisHost,
       })
     );
     this.openConnection();

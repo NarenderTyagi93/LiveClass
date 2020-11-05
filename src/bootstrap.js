@@ -17,7 +17,7 @@ module.exports = class Server {
   static init = async () => {
     try {
       new mongoConn(config.MONGO_URL);
-      require("./socket").instance(http);
+      require("./socket").instance(http, config.REDIS_URL_HOST);
       Server.initModels();
       Server.initLogger();
       Server.initServer();
